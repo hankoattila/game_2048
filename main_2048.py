@@ -4,64 +4,52 @@ import copy
 import move_2048
 import design_2048
 import new_random_2048
-
-myArray = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
-random_position_list = [0, 1, 2, 3]
-first_column = random.choice(random_position_list)
-first_row = random.choice(random_position_list)
-myArray[first_column][first_row] = 2
+import messages
 
 
 def main():
-    myArray = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+    my_array = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
     random_position_list = [0, 1, 2, 3]
     first_column = random.choice(random_position_list)
     first_row = random.choice(random_position_list)
-    myArray[first_column][first_row] = 2
+    my_array[first_column][first_row] = 2
 
-    up = input("Choose a key from keyboard for move UP: ")
-    right = input("Choose a key from keyboard for move RIGHT: ")
-    down = input("Choose a key from keyboard for move DOWN: ")
-    left = input("Choose a key from keyboard for move LEFT: ")
+    messages.welcome_message(messages.name_prompt())
+    controls = messages.set_controls()
+
     count = 0
     while True:
-        design_2048.mapp(myArray)
-        print(design_2048.color(""))
-        print(design_2048.color("Up:") + design_2048.color(up))
-        print(design_2048.color("Right:") + design_2048.color(right))
-        print(design_2048.color("Down:") + design_2048.color(down))
-        print(design_2048.color("Left:") + design_2048.color(left))
-        print(design_2048.color("Type q to exit\n"))
+        design_2048.mapp(my_array)
+        messages.defined_controls(controls)
+        move = input("Command: ")
 
-        move = input("Give me a direction: ")
+        if move == controls[0]:
+            last_my_array = copy.deepcopy(my_array)
+            move_2048.move_up(my_array)
+            count = count + move_2048.up_addition(my_array)
+            move_2048.no_move(my_array, last_my_array)
+            design_2048.mapp(my_array)
 
-        if move == up:
-            last_Myarray = copy.deepcopy(myArray)
-            move_2048.move_up(myArray)
-            count = count + move_2048.up_addition(myArray)
-            move_2048.no_move(myArray, last_Myarray)
-            design_2048.mapp(myArray)
+        if move == controls[1]:
+            last_my_array = copy.deepcopy(my_array)
+            move_2048.down_move(my_array)
+            move_2048.down_addition(my_array)
+            move_2048.no_move(my_array, last_my_array)
+            design_2048.mapp(my_array)
 
-        if move == down:
-            last_Myarray = copy.deepcopy(myArray)
-            move_2048.down_move(myArray)
-            move_2048.down_addition(myArray)
-            move_2048.no_move(myArray, last_Myarray)
-            design_2048.mapp(myArray)
+        if move == controls[2]:
+            last_my_array = copy.deepcopy(my_array)
+            move_2048.left_move(my_array)
+            move_2048.left_addition(my_array)
+            move_2048.no_move(my_array, last_my_array)
+            design_2048.mapp(my_array)
 
-        if move == left:
-            last_Myarray = copy.deepcopy(myArray)
-            move_2048.left_move(myArray)
-            move_2048.left_addition(myArray)
-            move_2048.no_move(myArray, last_Myarray)
-            design_2048.mapp(myArray)
-
-        if move == right:
-            last_Myarray = copy.deepcopy(myArray)
-            move_2048.right_move(myArray)
-            move_2048.right_addition(myArray)
-            move_2048.no_move(myArray, last_Myarray)
-            design_2048.mapp(myArray)
+        if move == controls[3]:
+            last_my_array = copy.deepcopy(my_array)
+            move_2048.right_move(my_array)
+            move_2048.right_addition(my_array)
+            move_2048.no_move(my_array, last_my_array)
+            design_2048.mapp(my_array)
         if move == 'q':
             os.system('clear')
             input_exit = input("Would you like to save your game? (y/N) ")
