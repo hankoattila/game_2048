@@ -37,23 +37,23 @@ def color(caracter):
     return the_color
 
 
-def mapp(myArray):
+def mapp(my_array):
     os.system('clear')
     print(color("┏━━━━━━┳━━━━━━┳━━━━━━┳━━━━━━┓"))
-    print(color("┃ ") + color(" " * szam(0, 0, myArray)) + color(str(myArray[0][0])) + color(" ┃ ") + color(" " * szam(0, 1, myArray) + color(str(myArray[0][1]))) + color(
-        " ┃ ") + color(" " * szam(0, 2, myArray)) + color(str(myArray[0][2])) + color(" ┃ ") + color(" " * szam(0, 3, myArray)) + color(str(myArray[0][3])) + color(" ┃"))
+    print(color("┃ ") + color(" " * szam(0, 0, my_array)) + color(str(my_array[0][0])) + color(" ┃ ") + color(" " * szam(0, 1, my_array) + color(str(my_array[0][1]))) + color(
+        " ┃ ") + color(" " * szam(0, 2, my_array)) + color(str(my_array[0][2])) + color(" ┃ ") + color(" " * szam(0, 3, my_array)) + color(str(my_array[0][3])) + color(" ┃"))
     print(color("┣━━━━━━╋━━━━━━╋━━━━━━╋━━━━━━┫"))
-    print(color("┃ ") + color(" " * szam(1, 0, myArray) + color(str(myArray[1][0]))) + color(" ┃ ") + color(" " * szam(1, 1, myArray)) + color(str(myArray[1][1])) + color(
-        " ┃ ") + color(" " * szam(1, 2, myArray)) + color(str(myArray[1][2])) + color(" ┃ ") + color(" " * szam(1, 3, myArray)) + color(str(myArray[1][3])) + color(" ┃"))
+    print(color("┃ ") + color(" " * szam(1, 0, my_array) + color(str(my_array[1][0]))) + color(" ┃ ") + color(" " * szam(1, 1, my_array)) + color(str(my_array[1][1])) + color(
+        " ┃ ") + color(" " * szam(1, 2, my_array)) + color(str(my_array[1][2])) + color(" ┃ ") + color(" " * szam(1, 3, my_array)) + color(str(my_array[1][3])) + color(" ┃"))
     print(color("┣━━━━━━╋━━━━━━╋━━━━━━╋━━━━━━┫"))
-    print(color("┃ ") + color(" " * szam(2, 0, myArray) + color(str(myArray[2][0]))) + color(" ┃ ") + color(" " * szam(2, 1, myArray)) + color(str(myArray[2][1])) + color(
-        " ┃ ") + color(" " * szam(2, 2, myArray)) + color(str(myArray[2][2])) + color(" ┃ ") + color(" " * szam(2, 3, myArray)) + color(str(myArray[2][3])) + color(" ┃"))
+    print(color("┃ ") + color(" " * szam(2, 0, my_array) + color(str(my_array[2][0]))) + color(" ┃ ") + color(" " * szam(2, 1, my_array)) + color(str(my_array[2][1])) + color(
+        " ┃ ") + color(" " * szam(2, 2, my_array)) + color(str(my_array[2][2])) + color(" ┃ ") + color(" " * szam(2, 3, my_array)) + color(str(my_array[2][3])) + color(" ┃"))
     print(color("┣━━━━━━╋━━━━━━╋━━━━━━╋━━━━━━┫"))
-    print(color("┃ ") + color(" " * szam(3, 0, myArray) + color(str(myArray[3][0]))) + color(" ┃ ") + color(" " * szam(3, 1, myArray)) + color(str(myArray[3][1])) + color(
-        " ┃ ") + color(" " * szam(3, 2, myArray)) + color(str(myArray[3][2])) + color(" ┃ ") + color(" " * szam(3, 3, myArray)) + color(str(myArray[3][3])) + color(" ┃"))
+    print(color("┃ ") + color(" " * szam(3, 0, my_array) + color(str(my_array[3][0]))) + color(" ┃ ") + color(" " * szam(3, 1, my_array)) + color(str(my_array[3][1])) + color(
+        " ┃ ") + color(" " * szam(3, 2, my_array)) + color(str(my_array[3][2])) + color(" ┃ ") + color(" " * szam(3, 3, my_array)) + color(str(my_array[3][3])) + color(" ┃"))
     print(color("┗━━━━━━┻━━━━━━┻━━━━━━┻━━━━━━┛"))
 
 
-def szam(x, y, myArray):
-    szorzas = (4 - len(str(myArray[x][y])))
+def szam(x, y, my_array):
+    szorzas = (4 - len(str(my_array[x][y])))
     return szorzas
