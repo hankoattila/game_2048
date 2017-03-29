@@ -3,16 +3,14 @@ import os
 import copy
 import move_2048
 import design_2048
+import menu_2048
 import new_random_2048
 import messages
+import file_handler_2048
 
 
 def main():
-    my_array = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
-    random_position_list = [0, 1, 2, 3]
-    first_column = random.choice(random_position_list)
-    first_row = random.choice(random_position_list)
-    my_array[first_column][first_row] = 2
+    my_array = menu_2048.start_game()
 
     messages.welcome_message(messages.name_prompt())
     controls = messages.set_controls()
@@ -54,8 +52,8 @@ def main():
             os.system('clear')
             input_exit = input("Would you like to save your game? (y/N) ")
             if input_exit == 'y' or input_exit == "Y":
-                print("your game is saved")
-
+                print("Your game is saved!")
+                exit()
             else:
                 exit()
 
