@@ -1,8 +1,8 @@
 import csv
 
 
-def export_list():
-    current_state = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 2048, 0]]
+def export_list(my_array):
+    current_state = my_array
     with open("saved_game.csv", "w") as k:
         for i in range(4):
             for x in range(4):

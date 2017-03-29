@@ -49,13 +49,7 @@ def main():
             move_2048.no_move(my_array, last_my_array)
             design_2048.mapp(my_array)
         if move == 'q':
-            os.system('clear')
-            input_exit = input("Would you like to save your game? (y/N) ")
-            if input_exit == 'y' or input_exit == "Y":
-                print("Your game is saved!")
-                exit()
-            else:
-                exit()
+            menu_2048.menu_exit(my_array)
 
 
 main()

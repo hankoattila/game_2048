@@ -1,10 +1,14 @@
 import file_handler_2048
+import os
+import random
 
 
 def start_game():
-    load_game_or_not = input("Would you like to load you game? (y/N: ")
-    if load_game_or_not == "y" or load_game_or_not == "Y":
-        my_array = file_handler_2048.list_import()
+    print("1) Start new game!")
+    print("2) Continue the last saved game!")
+    load_game_or_not = input("What would you liket to do?\nAnsware: ")
+    if load_game_or_not == "2":
+        my_array = file_handler_2048.import_list()
     else:
         my_array = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
         random_position_list = [0, 1, 2, 3]
@@ -22,5 +26,12 @@ def options():
     pass
 
 
-def menu_exit():
-    pass
+def menu_exit(my_array):
+    os.system('clear')
+    input_exit = input("Would you like to save your game? (y/N) ")
+    if input_exit == 'y' or input_exit == "Y":
+        print("Your game is saved!")
+        file_handler_2048.export_list(my_array)
+        exit()
+    else:
+        exit()
