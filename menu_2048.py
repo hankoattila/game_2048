@@ -4,11 +4,16 @@ import random
 
 
 def start_game():
+    print("The high score is: \x1B[1m" + str(int(file_handler_2048.heigh_score_import("high_score.csv"))) + "\x1B[0m\n")
     print("1) Start new game!")
-    print("2) Continue the last saved game!\n")
+    print("2) Continue the last saved game!")
+    print("3) Exit\n")
+    
     load_game_or_not = input("What would you like to do?\nAnswer: ")
     if load_game_or_not == "2":
         my_array = file_handler_2048.import_list()
+    elif load_game_or_not == "3":
+        exit()
     else:
         my_array = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
         random_position_list = [0, 1, 2, 3]
