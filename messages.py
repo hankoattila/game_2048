@@ -1,5 +1,5 @@
 def name_prompt():
-    username = input("Your name: ")
+    username = input("\nYour name: ")
     return username
 
 
@@ -9,7 +9,7 @@ def welcome_message(username):
 
 
 def set_controls():
-    print("Please set the controls of movement:")
+    print("\nPlease set the controls of movement:")
     up = input("Move up: ")
     down = input("Move down: ")
     left = input("Move left: ")
@@ -19,6 +19,5 @@ def set_controls():
 
 def defined_controls(controls):
     print("\nControls:")
-    print("Up: [{}] | Down: [{}] | Left: [{}] | Right: [{}]".format(controls[0]
-          , controls[1], controls[2], controls[3]))
+    print("Up: [{}] | Down: [{}] | Left: [{}] | Right: [{}]".format(controls[0], controls[1], controls[2], controls[3]))
     print("Press [q] to exit.\n")

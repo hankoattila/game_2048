@@ -5,7 +5,7 @@ import random
 
 def start_game():
     print("1) Start new game!")
-    print("2) Continue the last saved game!")
+    print("2) Continue the last saved game!\n")
     load_game_or_not = input("What would you liket to do?\nAnsware: ")
     if load_game_or_not == "2":
         my_array = file_handler_2048.import_list()
@@ -16,14 +16,6 @@ def start_game():
         first_row = random.choice(random_position_list)
         my_array[first_column][first_row] = 2
     return my_array
-
-
-def load_game():
-    pass
-
-
-def options():
-    pass
 
 
 def menu_exit(my_array):
