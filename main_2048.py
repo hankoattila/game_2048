@@ -13,7 +13,6 @@ def main():
     count = 0
     user = messages.welcome_message(messages.name_prompt())
     my_array = menu_2048.start_game()
-    print(my_array)
     if my_array[0].count(2) > 1 or my_array[1].count(2) > 1 or my_array[2].count(2) > 1 or my_array[3].count(2) > 1:
         count = int(file_handler_2048.heigh_score_import("score_of_the_saved_game.csv"))
     controls = messages.set_controls()
