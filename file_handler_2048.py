@@ -1,16 +1,16 @@
 import csv
 
 
-def export_list(my_array):
+def export_list(my_array, filename="saved_game.csv"):
     current_state = my_array
-    with open("saved_game.csv", "w") as k:
+    with open(filename, "w") as k:
         for i in range(4):
             for x in range(4):
                 k.write(str(current_state[i][x]) + ",")
 
 
-def import_list():
-    with open("saved_game.csv", "r") as f:
+def import_list(filename="saved_game.csv"):
+    with open(filename, "r") as f:
         import_old_array = f.read()
 
     array_of_imported_splitted_file = import_old_array.split(",")
