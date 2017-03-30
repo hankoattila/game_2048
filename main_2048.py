@@ -10,16 +10,17 @@ import file_handler_2048
 
 
 def main():
-
-    messages.welcome_message(messages.name_prompt())
+    user = messages.welcome_message(messages.name_prompt())
     my_array = menu_2048.start_game()
     controls = messages.set_controls()
 
     count = 0
+
     while True:
         design_2048.mapp(my_array)
+        messages.current_player(user)
+        print("Score: " + str(count))
         messages.defined_controls(controls)
-        print("Total Number: " + str(count))
 
         check_the_free_place_of_the_table = copy.deepcopy(my_array)
         move_2048.full_map(check_the_free_place_of_the_table)
