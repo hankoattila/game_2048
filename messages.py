@@ -6,7 +6,8 @@ def name_prompt():
 def welcome_message(username):
     print((len("Your name: " + username)) * "-")
     print("\nWelcome, {}!\n".format(username))
-
+    return username
+    
 
 def set_controls():
     print("\nPlease set the controls of movement:")
@@ -21,3 +22,8 @@ def defined_controls(controls):
     print("\nControls:")
     print("Up: [{}] | Down: [{}] | Left: [{}] | Right: [{}]".format(controls[0], controls[1], controls[2], controls[3]))
     print("Press [q] to exit.\n")
+
+
+def current_player(username):
+    username = print("\nPlayer: {} |".format(username), end=" ")
+    return username

@@ -6,7 +6,7 @@ import random
 def start_game():
     print("1) Start new game!")
     print("2) Continue the last saved game!\n")
-    load_game_or_not = input("What would you liket to do?\nAnsware: ")
+    load_game_or_not = input("What would you like to do?\nAnswer: ")
     if load_game_or_not == "2":
         my_array = file_handler_2048.import_list()
     else:
