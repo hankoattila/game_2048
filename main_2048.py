@@ -11,6 +11,7 @@ import file_handler_2048
 
 def main():
     count = 0
+    messages.title()
     user = messages.welcome_message(messages.name_prompt())
     my_array = menu_2048.start_game()
     if my_array[0].count(2) > 1 or my_array[1].count(2) > 1 or my_array[2].count(2) > 1 or my_array[3].count(2) > 1:
@@ -21,8 +22,8 @@ def main():
     while True:
         design_2048.mapp(my_array)
         messages.current_player(user)
-        print("Score: " + str(count))
-        print("High Score: " + str(high_score))
+        print("\x1B[1mScore:\x1B[0m " + str(count) + " |", end=" ")
+        print("\x1B[1mHigh Score:\x1B[0m " + str(high_score))
 
         messages.defined_controls(controls)
 
