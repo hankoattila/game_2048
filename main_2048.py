@@ -27,6 +27,8 @@ def main():
         move_2048.full_map(check_the_free_place_of_the_table)
         if my_array == check_the_free_place_of_the_table:
             design_2048.mapp(my_array)
+            if count > high_score:
+                file_handler_2048.heigh_score_export(count, "high_score.csv")
             break
 
         move = input("Command: ")
