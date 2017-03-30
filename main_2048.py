@@ -13,8 +13,12 @@ def main():
     count = 0
     user = messages.welcome_message(messages.name_prompt())
     my_array = menu_2048.start_game()
+    print(my_array)
+    if my_array[0].count(2) > 1 or my_array[1].count(2) > 1 or my_array[2].count(2) > 1 or my_array[3].count(2) > 1:
+        count = int(file_handler_2048.heigh_score_import("score_of_the_saved_game.csv"))
     controls = messages.set_controls()
     high_score = int(file_handler_2048.heigh_score_import("high_score.csv"))
+
     while True:
         design_2048.mapp(my_array)
         messages.current_player(user)
@@ -61,10 +65,9 @@ def main():
             move_2048.no_move(my_array, last_my_array)
             design_2048.mapp(my_array)
         if move == 'q':
-            if count > high_score:
-                file_handler_2048.heigh_score_export(count, "high_score.csv")
-            menu_2048.menu_exit(my_array, count)
+            menu_2048.menu_exit(my_array, high_score, count)
     os.system("clear")
+    design_2048.mapp(my_array)
     print("-=Game Over=-")
 
 

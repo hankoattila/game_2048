@@ -18,12 +18,15 @@ def start_game():
     return my_array
 
 
-def menu_exit(my_array, count=0):
+def menu_exit(my_array, high_score, count=0):
     os.system('clear')
-    file_handler_2048.heigh_score_export(count)
     input_exit = input("Would you like to save your game? (y/N) ")
+    if count > high_score:
+        file_handler_2048.heigh_score_export(count, "high_score.csv")
+
     if input_exit == 'y' or input_exit == "Y":
         print("Your game is saved!")
+        file_handler_2048.heigh_score_export(count, "score_of_the_saved_game.csv")
         file_handler_2048.export_list(my_array)
         exit()
     else:
