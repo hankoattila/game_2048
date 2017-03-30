@@ -33,5 +33,3 @@ def import_list(filename="saved_game.csv"):
             number_of_export_list = number_of_export_list + 1
     return new_table
 
-
-import_list()
