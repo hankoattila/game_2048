@@ -1,12 +1,23 @@
 import csv
 
 
+def heigh_score_import(filename="score.csv"):
+    with open(filename, "r") as score:
+        heigh_score = score.read()
+    return heigh_score
+
+
+def heigh_score_export(count, filename="score.csv"):
+    with open(filename, "w") as score:
+        score.write(str(count))
+
+
 def export_list(my_array, filename="saved_game.csv"):
     current_state = my_array
-    with open(filename, "w") as k:
+    with open(filename, "w") as f:
         for i in range(4):
             for x in range(4):
-                k.write(str(current_state[i][x]) + ",")
+                f.write(str(current_state[i][x]) + ",")
 
 
 def import_list(filename="saved_game.csv"):

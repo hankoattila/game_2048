@@ -10,24 +10,24 @@ import file_handler_2048
 
 
 def main():
+    count = 0
     user = messages.welcome_message(messages.name_prompt())
     my_array = menu_2048.start_game()
     controls = messages.set_controls()
-
-    count = 0
-
+    high_score = int(file_handler_2048.heigh_score_import("high_score.csv"))
     while True:
         design_2048.mapp(my_array)
         messages.current_player(user)
         print("Score: " + str(count))
+        print("High Score: " + str(high_score))
+
         messages.defined_controls(controls)
 
         check_the_free_place_of_the_table = copy.deepcopy(my_array)
         move_2048.full_map(check_the_free_place_of_the_table)
         if my_array == check_the_free_place_of_the_table:
-            os.system('clear')
             design_2048.mapp(my_array)
-            print("\nJatek Vege")
+            break
 
         move = input("Command: ")
 
@@ -59,7 +59,11 @@ def main():
             move_2048.no_move(my_array, last_my_array)
             design_2048.mapp(my_array)
         if move == 'q':
-            menu_2048.menu_exit(my_array)
+            if count > high_score:
+                file_handler_2048.heigh_score_export(count, "high_score.csv")
+            menu_2048.menu_exit(my_array, count)
+    os.system("clear")
+    print("-=Game Over=-")
 
 
 main()
